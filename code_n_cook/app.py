@@ -10,7 +10,7 @@ import json
 # from weekly_menu import weekly_menu
 
 app=Flask(__name__, template_folder='templates', static_url_path='/static')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/malgorzatakozlowska/PZSP1/recipes_database.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\krzys\\OneDrive\\Pulpit\\Test_bazy_danych\\data\\data.sqlite'
 app.config["SQLACHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
@@ -341,9 +341,9 @@ def pancakes():
 
     return render_template("pancakes.html")
 
-@app.route("/scramled_eggs")
+@app.route("/scrambled_eggs")
 def scrambled_eggs():
-    scrabled_eggs = Recipe.query.filter(Recipe.id==1).first()
+    scrambled_eggs = Recipe.query.filter(Recipe.id==1).first()
 
     return render_template("scrambled_eggs.html")
 
@@ -357,17 +357,17 @@ def banana_overnight_oats():
 def shakshuka():
     shakshuka = Recipe.query.filter(Recipe.id==4).first()
 
-    return render_template("shaksuka.html")
+    return render_template("shakshuka.html")
 
 @app.route("/homemade_granola_bars")
 def homemade_granola_bars():
     homemade_granola_bars = Recipe.query.filter(Recipe.id==5).first()
 
-    return render_template("shaksuka.html")
+    return render_template("homemade_granola_bars.html")
 
 @app.route("/veggies_with_hummus")
 def veggies_with_hummus():
-    veggies_with_hummus = Recipe.query.filter(Recipe.id==6).first.first()
+    veggies_with_hummus = Recipe.query.filter(Recipe.id==6).first()
 
     return render_template("veggies_with_hummus.html")
 
@@ -394,6 +394,36 @@ def pumpkin_soup():
     pumpkin_soup = Recipe.query.filter(Recipe.id==10).first()
 
     return render_template("pumpkin_soup.html")
+
+@app.route("/chinese_pork_dumplings")
+def chinese_pork_dumplings():
+    chinese_pork_dumplings = Recipe.query.filter(Recipe.id==11).first()
+
+    return render_template("chinese_pork_dumplings.html")
+
+@app.route("/homemade_cinnamon_cereal")
+def homemade_cinnamon_cereal():
+    homemade_cinnamon_cereal = Recipe.query.filter(Recipe.id==12).first()
+
+    return render_template("homemade_cinnamon_cereal.html")
+
+@app.route("/pasta_alla_cacio_e_peppe")
+def pasta_alla_cacio_e_peppe():
+    pasta_alla_cacio_e_peppe = Recipe.query.filter(Recipe.id==13).first()
+
+    return render_template("pasta_alla_cacio_e_peppe.html")
+
+@app.route("/kale_chips")
+def kale_chips():
+    kale_chips = Recipe.query.filter(Recipe.id==14).first()
+
+    return render_template("kale_chips.html")
+
+@app.route("/baked_brussel")
+def baked_brussel():
+    baked_brusell = Recipe.query.filter(Recipe.id==15).first()
+
+    return render_template("baked_brussel.html")
 
 # pancakes = Recipe.query.filter(Recipe.id==2).first()
 # print(pancakes.weighted_ingredients)
