@@ -337,9 +337,63 @@ def pasta():
 
 @app.route("/pancakes")
 def pancakes():
-    pancakes = Recipe.query.filter(Recipe.id==2)
+    pancakes = Recipe.query.filter(Recipe.id==2).first()
 
     return render_template("pancakes.html")
+
+@app.route("/scramled_eggs")
+def scrambled_eggs():
+    scrabled_eggs = Recipe.query.filter(Recipe.id==1).first()
+
+    return render_template("scrambled_eggs.html")
+
+@app.route("/banana_overnight_oats")
+def banana_overnight_oats():
+    banana_overnight_oats = Recipe.query.filter(Recipe.id==3).first()
+
+    return render_template("banana_overnight_oats.html")
+
+@app.route("/shakshuka")
+def shakshuka():
+    shakshuka = Recipe.query.filter(Recipe.id==4).first()
+
+    return render_template("shaksuka.html")
+
+@app.route("/homemade_granola_bars")
+def homemade_granola_bars():
+    homemade_granola_bars = Recipe.query.filter(Recipe.id==5).first()
+
+    return render_template("shaksuka.html")
+
+@app.route("/veggies_with_hummus")
+def veggies_with_hummus():
+    veggies_with_hummus = Recipe.query.filter(Recipe.id==6).first.first()
+
+    return render_template("veggies_with_hummus.html")
+
+@app.route("/protein_peanut_butter_shake")
+def protein_peanut_butter_shake():
+    homemade_granola_bars = Recipe.query.filter(Recipe.id==7).first()
+
+    return render_template("protein_peanut_butter_shake.html")
+
+@app.route("/creamy_tuscan_pasta")
+def creamy_tuscan_pasta():
+    creamy_tuscan_pasta = Recipe.query.filter(Recipe.id==8).first()
+
+    return render_template("creamy_tuscan_pasta.html")
+
+@app.route("/yellow_chicken_curry")
+def yellow_chicken_curry():
+    yellow_chicken_curry = Recipe.query.filter(Recipe.id==9).first()
+
+    return render_template("yellow_chicken_curry.html")
+
+@app.route("/pumpkin_soup")
+def pumpkin_soup():
+    pumpkin_soup = Recipe.query.filter(Recipe.id==10).first()
+
+    return render_template("pumpkin_soup.html")
 
 # pancakes = Recipe.query.filter(Recipe.id==2).first()
 # print(pancakes.weighted_ingredients)
