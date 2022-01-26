@@ -1,0 +1,59 @@
+<!--Tu nic na razie nie ma-->
+{% extends 'base.html' %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+    <style>
+        #form{
+            width: 550px !important;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            background-color: #7ca54e;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+            border-radius: 30px;
+        }
+        .form-label{
+            font-size: 20px;
+        }
+        #button-bottom{
+            background-color: green !important;
+            border-color: #0E5106 !important;
+        }
+        .text-page{
+            text-align: justify;
+        }
+        .center {
+            padding-top: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+<div id='form'>
+    <form action="{{ url_for('my_page') }}" method="GET" >
+		<div class="container">
+			<div class="row justify-content-center">
+					<h2 class="heading-section">Hi, sorry to disappoint you!!</h2>
+                    <h5 class='text-page'>Before You are able to see
+                         Your week meal plan You need to tell us something about
+                          Yourself in our questionnaire.</h5>
+                <input id='button-bottom' class="btn btn-primary" type="submit" value="Let's go!">
+            </div>
+        </div>
+    </form>
+</div>
+<div id='image'>
+    <img class='center' src="{{url_for('static', filename='cat.jpg')}}">
+</div>
+</body>
+</html>
+{% endblock %}

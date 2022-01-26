@@ -6,34 +6,53 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
+
+    <style>
+        #logo{
+            color: green;
+            font-size: 24px;
+        }
+
+        body{
+            background-color: #878B81;
+            font-family: 'Lato', sans-serif;
+        }
+
+        #footer{
+            color: #fff !important;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src=""{{url_for('static', filename='logo.svg')}}"" width="30" height="30" class="d-inline-block align-top" alt="">
-          Code'N'Cook</a>
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+          <img src='/static/egg-fried.svg' width="40" height="40" class="d-inline-block align-top" alt="">
+          <span id="logo">Code'n'Cook</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	     <span class="navbar-toggler-icon"></span>
 	 </button>
          <div class="collapse navbar-collapse" id="navbarNav">
              <ul class="navbar-nav">
 	         <li class="nav-item active">
-                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+		     </li>
+		<li class="nav-item">
+		    <a class="nav-link" href="{{ url_for('my_page') }}">My page</a>
 		</li>
 		<li class="nav-item">
-		    <a class="nav-link" href="my_page.html">My page</a>
+		    <a class="nav-link" href="{{ url_for('meal_planner') }}">Meal Planner</a>
 		</li>
 		<li class="nav-item">
-		    <a class="nav-link" href="meal_planner.html">Meal Planner</a>
-		</li>
-		<li class="nav-item">
-		    <a class="nav-link" href="my_fridge.html">My fridge</a>
+		    <a class="nav-link" href="{{ url_for('my_fridge') }}">My fridge</a>
         </li>
 		<li class="nav-item">
-		    <a class="nav-link" href="recipe_inspiration.html" tabindex="-1" aria-disabled="true">Recipe inspiration</a>
+		    <a class="nav-link" href="{{ url_for('recipe_inspiration') }}">Recipe inspiration</a>
 		</li>
-	    </ul>
+        <li class="nav-item">
+		    <a class="nav-link" href="{{ url_for('about_us') }}">About us</a>
+		</li>
         </div>
     </nav>
     {% block content %}

@@ -6,7 +6,7 @@
 <head>
     <style>
         #form{
-            width: 600px !important;
+            width: 400px !important;
             margin-left: auto;
             margin-right: auto;
             margin-top: 30px;
@@ -25,12 +25,21 @@
             border-color: #0E5106 !important;
         }
     </style>
+    <script>
+        submitForms = function(){
+            document.getElementById("form1").submit();
+            document.getElementById("form2").submit();
+            document.getElementById("form3").submit();
+            document.getElementById("form4").submit();
+            document.getElementById("form5").submit();
+        }
+    </script>
 </head>
 <body>
 <div id='form'>
-    <form action="{{ url_for('my_page') }}" method="post">
+    <form action="{{ url_for('meal_planner') }}" method="post" >
         <div class="form-group">
-        <label for="email" class='form-label'>Your name</label>
+        <label for="exampleInputEmail1" class='form-label'>Your name</label>
         <input type="text" class="form-control" id="email" placeholder="Enter your name" name="name">
         </div>
         <div class="form-group">
@@ -45,36 +54,39 @@
         <label for="age" class=form-label>Your age</label>
         <input type="number" class="form-control" id="age" placeholder="Your age" name="age">
         </div>
-            <div class='form-label'>Your gender</div>
-            <input type="radio" id="male" name="gender" value="Male">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="Female">
-            <label for="female">Female</label><br>
-            <div class='form-label'>Your activity level</div>
-            <input type="radio" id="none" name="activity" value="none">
-            <label for="none">None</label><br>
-            <input type="radio" id="light" name="activity" value="light">
-            <label for="light">Light</label><br>
-            <input type="radio" id="medium" name="activity" value="medium">
-            <label for="medium">Medium</label><br>
-            <input type="radio" id="heavy" name="activity" value="heavy">
-            <label for="heavy">Heavy</label><br>
-            <input type="radio" id="extreme" name="activity" value="extreme">
-            <label for="extreme">Extreme</label><br>
-            <div class='form-label'>What is your goal?</div>
-            <input type="radio" id="lose" name="goal" value="lose">
-            <label for="loose">To lose weight</label><br>
-            <input type="radio" id="gain" name="goal" value="gain">
-            <label for="gain">To gain weight</label><br>
-            <input type="radio" id="maintain" name="goal" value="maintain">
-            <label for="maintain">To maintain weight</label>
-        <input type="submit" id='button-bottom'class="btn btn-primary" >Can't wait!</input>
+        <div class='form-label'>Your gender</div>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <div class='form-label'>Your diet</div>
+        <input type="radio" id="vegan" name="diet" value="vegan">
+        <label for="vegan">Vegan</label><br>
+        <input type="radio" id="vegeterian" name="diet" value="vegeterian">
+        <label for="vegeteruan">Vegeterian</label><br>
+        <input type="radio" id="standard" name="diet" value="standard">
+        <label for="standard">Standard</label><br>
+        <div class='form-label'>Your activity level</div>
+        <input type="radio" id="none" name="activity" value="none">
+        <label for="none">None</label><br>
+        <input type="radio" id="light" name="activity" value="light">
+        <label for="light">Light</label><br>
+        <input type="radio" id="medium" name="activity" value="medium">
+        <label for="medium">Medium</label><br>
+        <input type="radio" id="heavy" name="activity" value="heavy">
+        <label for="heavy">Heavy</label><br>
+        <input type="radio" id="extreme" name="activity" value="extreme">
+        <label for="extreme">Extreme</label><br>
+        <div class='form-label'>What is your goal?</div>
+        <input type="radio" id="lose" name="goal" value="lose">
+        <label for="loose">To loose weight</label><br>
+        <input type="radio" id="gain" name="goal" value="gain">
+        <label for="gain">To gain weight</label><br>
+        <input type="radio" id="maintain" name="goal" value="maintain">
+        <label for="maintain">To maintain weight</label><br>
+        <input type="submit" value="Can't wait!!">
     </form>
 </div>
-<form action="{{ url_for('meal_planner') }}" method="post">
-    Project file path: <input type="text" name="projectFilePath"><br>
-    <input type="submit" value="Submit">
-</form>
 </body>
 </html>
 {% endblock %}

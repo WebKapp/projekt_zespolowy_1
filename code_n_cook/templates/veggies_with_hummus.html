@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Blog Post - Start Bootstrap Template</title>
+
+        <style>
+            #content{
+                margin-top: 10px !important;
+            }
+            .categories{
+                color: #000;
+                background-color: green !important;
+            }
+            #fun-facts{
+                padding-right: 10px;
+                padding-left: 10px;
+                text-align: justify;
+            }
+            .fact-title{
+                text-align: left;
+                color: green;
+            }
+            #recipe{
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 10px;
+            }
+            .recipe-title{
+                padding-bottom: 5px;
+                color: green;
+            }
+            #recipe-doing{
+                text-align: justify !important;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Page content-->
+        <div class="container mt-5" id='content'>
+            <div class="row">
+                <div class="col-lg-8" id='recipe'>
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">Veggies with hummus</h1>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">Posted on January 1, 2022</div>
+                            <!-- Post categories-->
+                            <a class="badge bg-secondary text-decoration-none link-light categories" href="#!"><span>Tomates</span></a>
+                            <a class="badge bg-secondary text-decoration-none link-light categories" href="#!"><span>Zucchini</span></a>
+                        </header>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" style="width: 300px; height: 300px;" src="{{url_for('static', filename='chef_cooking.png')}}" alt="..." /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            <p class="fs-5 mb-4">
+                                <h2 class="fw-bolder mb-4 mt-5 recipe-title">Ingredients</h2>
+                                <ul>
+                                    <li>0,5 zucchini</li>
+                                    <li>0,5 eggplant</li>
+                                    <li>1 red pepper</li>
+                                    <li>1 yellow pepper</li>
+                                    <li>1 green pepper</li>
+                                    <li>0,5 onion</li>
+                                    <li>7 cherry tomatoes</li>
+                                    <li>1 jalepno</li>
+                                    <li>7 sugar snap peas</li>
+                                    <li>1 avacado</li>
+                                    <li>2 radishes</li>
+                                </ul>
+                            </p>
+                            <h2 class="fw-bolder mb-4 mt-5 recipe-title">Let's cook, shall we?</h2>
+                            <p class="fs-5 mb-4" id='recipe-doing'>
+                                <ol id='recipe-doing'>
+                                    <li>Slice all your veggies as you like them. Arrange the hummus on a large cutting board or serving tray and layer in the veggies as they'll fit. </li>
+                                    <li>Serve and enjoy!</li>
+                                </ol>
+                            </p>
+                        </section>
+                    </article>
+                    <!-- Comments section-->
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Fun facts about food</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div id='fun-facts'>
+                                    <h3 class='fact-title'>Broccoli contains more protein than steak</h3>
+                                    Former President George W Bush may have once famously proclaimed:
+                                    “I’m president of the United States and I’m not going to eat any more broccoli,”
+                                    but don’t listen to him! Besides the usual nutrition one gets from eating their greens,
+                                    broccoli has a great deal of protein. Calorie for calorie, there is more protein in broccoli than steak.
+                                    And it doesn’t come with all those saturated and trans fats or cholesterol, so you can get all the protein
+                                    you need with a significantly lower risk of cardiovascular disease with this healthy food.
+                                    <br><br>
+                                    <h3 class='fact-title'>Pistachios are actually fruits</h3>
+                                    Another unbelievable-but-true random fact! They are actually the seeds of a fruit
+                                    (the outer fruit is removed during processing). Like other ‘nuts’,
+                                    pistachios are a rich source of protein, fibre, vitamins and minerals,
+                                    which can help people with weight management, protect against diabetes
+                                    and hypertension and improve digestion. The omega-3 fatty acids present
+                                    in pistachios can help lower your blood pressure and may also reduce your risk of heart disease.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+{% endblock %}

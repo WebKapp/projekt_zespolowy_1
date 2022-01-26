@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -14,9 +15,32 @@
 
 	<link rel="stylesheet" href="css/style.css">
     <style>
-        #title_table{
-            padding-top: 30px !important;
-        }
+      #title_table{
+          padding-top: 30px !important;
+      }
+      a{
+        color: green;
+        text-decoration: none;
+      }
+      a:visited{
+        color: darkgreen;
+        text-decoration: none;
+      }
+      a:hover {
+        color: hotpink;
+        text-decoration: bold;
+      }
+      .week-day{
+            color: #0c2907;
+            text-decoration: bold;
+            background-color: #6F6F6F;
+          }
+      .food{
+        background-color: #DBDBDB;
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
     </style>
 	</head>
 	<body>
@@ -25,6 +49,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5" id='title_table'>
 					<h2 class="heading-section">Hi, {{ name }}! Here's your meal plan!</h2>
+          <h5 class="heading-section">Did You know? Your daily calorie intake is {{ calorie_intake }} kcal!</h5>
 				</div>
 			</div>
 			<div class="row">
@@ -34,47 +59,47 @@
 						<table class="table table-bordered text-center">
               <thead>
                 <tr>
-                  <th>Monday</th>
-                  <th>Tuesday</th>
-                  <th>Wednesday</th>
-                  <th>Thursday</th>
-                  <th>Friday</th>
+                  <th class='week-day'>Monday</th>
+                  <th class='week-day'>Tuesday</th>
+                  <th class='week-day'>Wednesday</th>
+                  <th class='week-day'>Thursday</th>
+                  <th class='week-day'>Friday</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                 <tr>
-                  {% for breakfast in week_menu["breakfast"] %}
-                  <td class="text-center"><div class="img rounded-circle mb-2" style="background-image: url(images/classes-4.jpg);"></div>
-                    <a href="#"><strong>{{ breakfast }}</strong> <br>
+                  {% for breakfast in week_menu[0] %}
+                  <td class="text-center food">
+                    <a class='recipe' href="{{ url_for(breakfast.url) }}"><strong>{{ breakfast.name.title() }}</strong> <br>
                     </a>
                   {% endfor %}
                 </tr>
                 <tr>
-                  {% for snack in week_menu["snack"] %}
-                  <td class="text-center"><div class="img rounded-circle mb-2" style="background-image: url(images/classes-4.jpg);"></div>
-                    <a href="#"><strong>{{ snack }}</strong> <br>
+                  {% for snack in week_menu[1] %}
+                  <td class="text-center food">
+                    <a class='recipe' href="{{ url_for(snack.url) }}"><strong>{{ snack.name.title() }}</strong> <br>
                     </a>
                   {% endfor %}
                 </tr>
                 <tr>
-                  {% for lunch in week_menu["lunch"] %}
-                  <td class="text-center"><div class="img rounded-circle mb-2" style="background-image: url(images/classes-4.jpg);"></div>
-                    <a href="#"><strong>{{ lunch }}</strong> <br>
+                  {% for lunch in week_menu[2] %}
+                  <td class="text-center food">
+                    <a class='recipe' href="{{ url_for(lunch.url) }}"><strong>{{ lunch.name.title() }}</strong> <br>
                   </a>
                   {% endfor %}
                 </tr>
                 <tr>
-                  {% for dinner in week_menu["dinner"] %}
-                  <td class="text-center"><div class="img rounded-circle mb-2" style="background-image: url(images/classes-4.jpg);"></div>
-                    <a href="#"><strong>{{ dinner }}</strong> <br>
+                  {% for dinner in week_menu[3] %}
+                  <td class="text-center food">
+                    <a class='recipe' href="{{ url_for(dinner.url) }}"><strong>{{ dinner.name.title() }}</strong> <br>
                     </a>
                   {% endfor %}
                 </tr>
                 <tr>
-                  {% for supper in week_menu["supper"] %}
-                  <td class="text-center"><div class="img rounded-circle mb-2" style="background-image: url(images/classes-4.jpg);"></div>
-                    <a href="#"><strong>{{ supper }}</strong> <br>
+                  {% for supper in week_menu[4] %}
+                  <td class="text-center food">
+                    <a class='recipe' href="{{ url_for(supper.url) }}"><strong>{{ supper.name.title() }}</strong> <br>
                     </a>
                   {% endfor %}
                 </tr>
