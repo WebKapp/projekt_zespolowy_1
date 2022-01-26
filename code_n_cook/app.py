@@ -425,6 +425,124 @@ def baked_brussel():
 
     return render_template("baked_brussel.html")
 
+@app.route("/vegan_tacos")
+def vegan_tacos():
+    vegan_tacos = Recipe.query.filter(Recipe.id==16).first()
+
+    return render_template("vegan_tacos.html")
+
+@app.route("/mac_and_cheese")
+def mac_and_cheese():
+    mac_and_cheese = Recipe.query.filter(Recipe.id==17).first()
+
+    return render_template("mac_and_cheese.html")
+
+@app.route("/apple_cinnamon_pancakes")
+def apple_cinnamon_pancakes():
+    apple_cinnamon_pancakes = Recipe.query.filter(Recipe.id==18).first()
+
+    return render_template("apple_cinnamon_pancakes.html")
+
+@app.route("/banana_shake")
+def banana_shake():
+    banana_shake = Recipe.query.filter(Recipe.id==19).first()
+
+    return render_template("banana_shake.html")
+
+@app.route("/avocado_and_black_bean_eggs")
+def avocado_and_black_bean_eggs():
+    avocado_and_black_bean_eggs = Recipe.query.filter(Recipe.id==20).first()
+
+    return render_template("avocado_and_black_bean_eggs.html")
+
+@app.route("/simple_fish_stew")
+def simple_fish_stew():
+    simple_fish_stew = Recipe.query.filter(Recipe.id==21).first()
+
+    return render_template("simple_fish_stew.html")
+
+@app.route("/bacon_tamato_avocado_sandwich")
+def bacon_tamato_avocado_sandwich():
+    bacon_tamato_avocado_sandwich = Recipe.query.filter(Recipe.id==22).first()
+
+    return render_template("bacon_tamato_avocado_sandwich.html")
+
+@app.route("/pasta_with_courgette_mozzarella")
+def pasta_with_courgette_mozzarella():
+    pasta_with_courgette_mozzarella = Recipe.query.filter(Recipe.id==23).first()
+
+    return render_template("pasta_with_courgette_mozzarella.html")
+
+@app.route("/baguette_with_brie")
+def baguette_with_brie():
+    baguette_with_brie = Recipe.query.filter(Recipe.id==24).first()
+
+    return render_template("baguette_with_brie.html")
+
+@app.route("/green_risotto")
+def green_risotto():
+    green_risotto = Recipe.query.filter(Recipe.id==25).first()
+
+    return render_template("green_risotto.html")
+
+@app.route("/oat_flakes")
+def oat_flakes():
+    oat_flakes = Recipe.query.filter(Recipe.id==26).first()
+
+    return render_template("oat_flakes.html")
+
+@app.route("/mango_sticky")
+def mango_sticky():
+    mango_sticky = Recipe.query.filter(Recipe.id==27).first()
+
+    return render_template("mango_sticky.html")
+
+@app.route("/olive_paste_sandwiches")
+def olive_paste_sandwiches():
+    olive_paste_sandwiches = Recipe.query.filter(Recipe.id==28).first()
+
+    return render_template("olive_paste_sandwiches.html")
+
+@app.route("/lesco")
+def lesco():
+    lesco = Recipe.query.filter(Recipe.id==29).first()
+
+    return render_template("lesco.html")
+
+@app.route("/vegan_pancakes")
+def vegan_pancakes():
+    vegan_pancakes = Recipe.query.filter(Recipe.id==30).first()
+
+    return render_template("vegan_pancakes.html")
+
+@app.route("/roasted_potato")
+def roasted_potato():
+    roasted_potato = Recipe.query.filter(Recipe.id==31).first()
+
+    return render_template("roasted_potato.html")
+
+@app.route("/aglio")
+def aglio():
+    aglio = Recipe.query.filter(Recipe.id==32).first()
+
+    return render_template("aglio.html")
+
+@app.route("/cocoa")
+def cocoa():
+    cocoa = Recipe.query.filter(Recipe.id==33).first()
+
+    return render_template("cocoa.html")
+
+@app.route("/pasta_with_ham")
+def pasta_with_ham():
+    pasta_with_ham = Recipe.query.filter(Recipe.id==34).first()
+
+    return render_template("pasta_with_ham.html")
+
+
+
+
+
 # pancakes = Recipe.query.filter(Recipe.id==2).first()
 # print(pancakes.weighted_ingredients)
 
