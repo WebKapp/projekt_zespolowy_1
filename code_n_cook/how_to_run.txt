@@ -1,0 +1,7 @@
+                JAK URUCHOMIĆ APLIKACJĘ WEBOWĄ CODE_N_COOK?
+_______________________________________________________________________________
+W celu uruchomienia aplikacji webowej na danym komputerze jest potrzebna instalacja
+Flask'a oraz utworzenie wirtualnego środowiska. Struktura projektu (podział na katalogi)
+powinien zostać zachowany (jak w udostępnionej wersji kodu). Ścieżka do bazy danych oraz
+nazwa katalogu w kodzie źródłowym powinna odpowiednio zostać zmieniona.
+

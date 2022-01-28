@@ -1,3 +1,49 @@
+from random import choice
+
+###############################################################################
+####           FUNCTION THAT CALCULATES YOUR CALORIE INTAKE                ####
+###############################################################################
+
+def calories(age, gender, weight, height, activity, goal):
+    if gender == 'male':
+        static = 66
+        hm =  5 * height
+        wm = 13.7 * weight
+        am = 6.8 * age
+    elif gender == 'female':
+        static = 655
+        hm = 1.8 * height
+        wm = 9.6 * weight
+        am = 4.7 * age
+
+    bmr_result = static + hm + wm - am
+    bmr_result = int(bmr_result)
+
+    if activity == 'none':
+        consumption = 1.2 * bmr_result
+    elif activity == 'light':
+        consumption = 1.375 * bmr_result
+    elif activity == 'medium':
+        consumption = 1.55 * bmr_result
+    elif activity == 'heavy':
+        consumption = 1.725 * bmr_result
+    elif activity == 'extreme':
+        consumption = 1.9 * bmr_result
+
+    if goal == 'lose':
+        calories = consumption - 500
+    elif goal == 'maintain':
+        calories = consumption
+    elif goal == 'gain':
+        calories = consumption + 500
+
+    return int(calories)
+
+###############################################################################
+####           FUNCTION THAT CREATES WEEK MEAL PLAN BASED ON               ####
+####             YOUR CALORIE INTAKE AND OTHER PARAMETERS                  ####
+###############################################################################
+
 def weekly_menu(
     calories, diet,
     breakfasts, lunches, dinners, suppers, snacks,
@@ -11,23 +57,23 @@ def weekly_menu(
     dinners_list = []
     suppers_list = []
     snacks_list = []
-    for day in range(7):
+    for _ in range(5):
         choice_timer = 0
         while choice_timer < 100000:
             choice_timer += 1
-            if not diet:
+            if diet == 'standard':
                 dinner = choice(dinners)
                 lunch = choice(lunches)
                 breakfast = choice(breakfasts)
                 supper = choice(suppers)
                 snack = choice(snacks)
-            if diet == 'vegetarian':  # nazwa diety
+            if diet == 'vegetarian':
                 dinner = choice(vege_dinners)
                 lunch = choice(vege_lunches)
                 breakfast = choice(vege_breakfasts)
                 supper = choice(vege_suppers)
                 snack = choice(vege_snacks)
-            if diet == 'vegan':  # nazwa diety
+            if diet == 'vegan':
                 dinner = choice(vegan_dinners)
                 lunch = choice(vegan_lunches)
                 breakfast = choice(vegan_breakfasts)
@@ -54,7 +100,7 @@ def weekly_menu(
                 break
 
         if choice_timer == 100000:
-            raise TooLittleProductsError
+            return None
 
         used_yesterday.clear()
         used_yesterday.extend([breakfast, lunch, dinner, supper, snack])
