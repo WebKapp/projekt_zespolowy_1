@@ -144,7 +144,7 @@ def weekly_menu(
                 break
 
         if choice_timer == 100000:
-            raise TooLittleProductsError
+            return None
 
         used_yesterday.clear()
         used_yesterday.extend([breakfast, lunch, dinner, supper, snack])
@@ -180,15 +180,20 @@ def meal_planner():
     if request.method == 'POST':
         name = request.form.get('name')
         weight_data = request.form.get('weight')
-        weight = int(weight_data)
         height_data = request.form.get('height')
-        height = int(height_data)
         age_data = request.form.get('age')
-        age = int(age_data)
         gender = request.form.get('gender')
         activity  = request.form.get('activity')
         goal = request.form.get('goal')
         diet = request.form.get('diet')
+
+        if not all([name, weight_data, height_data, age_data, gender, activity, goal, diet]):
+            return render_template('forgot_parameter.html')
+
+        weight = int(weight_data)
+        height = int(height_data)
+        age = int(age_data)
+
         calorie_intake = calories(age, gender, weight, height, activity, goal)
         recipes = sort_recipes()
         week_menu = weekly_menu(
@@ -203,6 +208,8 @@ def meal_planner():
                                     recipes['vegan_dinners'], recipes['vegan_suppers'],
                                     recipes['vegan_snacks']
                                     )
+        if not week_menu:
+            return render_template('too_little_recipes.html')
 
 
         result = flask.make_response(render_template('meal_planner.html', name=name,
@@ -383,12 +390,12 @@ def simple_fish_stew():
 
     return render_template("simple_fish_stew.html")
 
-@app.route("/bacon_tamato_avocado_sandwich")
-def bacon_tamato_avocado_sandwich():
-    bacon_tamato_avocado_sandwich = Recipe.query.filter(Recipe.id==22).first()
-    # send_data(bacon_tamato_avocado_sandwich.weighted_ingredients)
+@app.route("/bacon_tomato_avocado_sandwich")
+def bacon_tomato_avocado_sandwich():
+    bacon_tomato_avocado_sandwich = Recipe.query.filter(Recipe.id==22).first()
+    # send_data(bacon_tomato_avocado_sandwich.weighted_ingredients)
 
-    return render_template("bacon_tamato_avocado_sandwich.html")
+    return render_template("bacon_tomato_avocado_sandwich.html")
 
 @app.route("/pasta_with_courgette_mozzarella")
 def pasta_with_courgette_mozzarella():

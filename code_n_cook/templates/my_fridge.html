@@ -1,5 +1,56 @@
+
+<!--Tu nic na razie nie ma-->
 {% extends 'base.html' %}
-
 {% block content %}
-
+<!doctype html>
+<html>
+<head>
+    <style>
+        #form{
+            width: 550px !important;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            background-color: #7ca54e;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+            border-radius: 30px;
+        }
+        .form-label{
+            font-size: 20px;
+        }
+        #button-bottom{
+            background-color: green !important;
+            border-color: #0E5106 !important;
+        }
+        .text-page{
+            text-align: justify;
+        }
+        .center {
+            padding-top: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+<div id='form'>
+		<div class="container">
+			<div class="row justify-content-center">
+					<h2 class="heading-section">Development stage</h2>
+                    <h5 class='text-page'>This part of our application is still under development.
+                        Come back soon to see what we have for you!</h5>
+            </div>
+        </div>
+</div>
+<div id='image'>
+    <img class='center' src="{{url_for('static', filename='development.jpeg')}}">
+</div>
+</body>
+</html>
 {% endblock %}
